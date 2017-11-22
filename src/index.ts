@@ -1,11 +1,16 @@
-// Read numbers from a file
+// Read numbers from a file *TICK*
 // check companys, validate
 // output numbers with companys + validation status
+import { createReadStream } from 'fs'
+import { createInterface } from 'readline'
+import { getCompanyName } from './cardType'
 
-const lineReader = require('readline').createInterface({
-  input: require('fs').createReadStream('data/input.txt')
+const lineReader = createInterface({
+  input: createReadStream('data/input.txt')
 })
 
-lineReader.on('line', function(line: string) {
-  console.log('Line from file:', line)
+lineReader.on('line', (creditCard: string) => {
+  var company = `(${getCompanyName(creditCard)})`
+
+  console.log('Line from file: ', company)
 })
