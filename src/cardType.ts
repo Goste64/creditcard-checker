@@ -31,5 +31,5 @@ export const getCompanyName = (creditCard: string) => {
     return 'VISA'
   }
 
-  return 'Invalid'
+  return 'Unknown'
 }
