@@ -11,9 +11,9 @@ const lineReader = createInterface({
 })
 
 lineReader.on('line', (creditCard: string) => {
-  var company = `${getCompanyName(creditCard)}: ${creditCard} (${cardValidator(
-    creditCard
-  )})`
+  var company = `${getCompanyName(creditCard)}: ${creditCard} (${
+    cardValidator(creditCard) ? 'valid' : 'invalid'
+  })`
 
   console.log(company)
 })
