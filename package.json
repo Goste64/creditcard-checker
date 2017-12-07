@@ -20,7 +20,8 @@
   "homepage": "https://github.com/Goste64/creditcard-checker#readme",
   "dependencies": {
     "ts-node": "^3.3.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.1",
+    "winston": "^3.0.0-rc1"
   },
   "devDependencies": {
     "@types/jest": "^21.1.6",
