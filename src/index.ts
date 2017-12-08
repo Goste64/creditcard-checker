@@ -1,18 +1,14 @@
-// Read numbers from a file *TICK*
-// check companys, validate *TICK*
-// output numbers with companys + validation status *TICK*
 import { createReadStream } from 'fs'
 import { createInterface } from 'readline'
-import { getCompanyName } from './cardType'
+import * as fs from 'fs'
 
+import { getCompanyName } from './cardType'
 import { getAmexName } from './cardTypeAmex'
 import { getVisaName } from './cardTypeVISA'
 import { getDiscoverName } from './cardTypeDiscover'
 import { getMasterCardName } from './cardTypeMasterCard'
 
 import cardValidator from './cardValidator'
-
-import * as fs from 'fs'
 
 const lineReader = createInterface({
   input: createReadStream('data/input.txt')
