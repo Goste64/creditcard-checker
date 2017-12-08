@@ -37,7 +37,7 @@ AMEX: 378734493671000 (valid)
   * Card type (AMEX, Discover, MasterCard, VISA, Unknown)
   * Card number
   * Card validity (valid, invalid)
-* Results that are be accurate and covered by unit tests
+* Results that are accurate and covered by unit tests
 
 ## Resources
 
