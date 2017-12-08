@@ -37,7 +37,7 @@ AMEX: 378734493671000 (valid)
   * Card type (AMEX, Discover, MasterCard, VISA, Unknown)
   * Card number
   * Card validity (valid, invalid)
-* Results must be accurate and covered by unit tests
+* Results that are be accurate and covered by unit tests
 
 ## Resources
 
@@ -49,7 +49,7 @@ number.
 * https://en.wikipedia.org/wiki/Luhn_algorithm
 *
 
-### Suggested Technology
+### Technology
 
 * Node.js
 * TypeScript (ts-node)
