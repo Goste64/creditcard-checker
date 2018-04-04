@@ -10,6 +10,11 @@ import { getMasterCardName } from './cardTypeMasterCard'
 
 import cardValidator from './cardValidator'
 
+import * as outputVISA from './outputVisa'
+import * as outputDiscover from './outputDiscover'
+import * as outputAmex from './outputAmex'
+import * as outputMasterCard from './outputMastercard'
+
 const lineReader = createInterface({
   input: createReadStream('data/input.txt')
 })
@@ -33,84 +38,16 @@ lineReader.on('close', () => {
 
 //AMEX FILE
 
-const outputAmex: string[] = []
-
-lineReader.on('line', (creditCard: string) => {
-  if (getAmexName(creditCard)) {
-    outputAmex.push(
-      `${getAmexName(creditCard)}: ${creditCard} (${
-        cardValidator(creditCard) ? 'valid' : 'invalid'
-      })`
-    )
-  }
-})
-
-lineReader.on('close', () => {
-  fs.writeFile('./data/Amex.txt', outputAmex.join('\n'), err => {
-    if (err) throw err
-    console.log('The file has been saved!')
-  })
-})
+outputAmex
 
 //VISA FILE
 
-const outputVISA: string[] = []
-
-lineReader.on('line', (creditCard: string) => {
-  if (getVisaName(creditCard)) {
-    outputVISA.push(
-      `${getVisaName(creditCard)}: ${creditCard} (${
-        cardValidator(creditCard) ? 'valid' : 'invalid'
-      })`
-    )
-  }
-})
-
-lineReader.on('close', () => {
-  fs.writeFile('./data/VISA.txt', outputVISA.join('\n'), err => {
-    if (err) throw err
-    console.log('The file has been saved!')
-  })
-})
+outputVISA
 
 //Discover
 
-const outputDiscover: string[] = []
-
-lineReader.on('line', (creditCard: string) => {
-  if (getDiscoverName(creditCard)) {
-    outputDiscover.push(
-      `${getDiscoverName(creditCard)}: ${creditCard} (${
-        cardValidator(creditCard) ? 'valid' : 'invalid'
-      })`
-    )
-  }
-})
-
-lineReader.on('close', () => {
-  fs.writeFile('./data/Discover.txt', outputDiscover.join('\n'), err => {
-    if (err) throw err
-    console.log('The file has been saved!')
-  })
-})
+outputDiscover
 
 //MasterCard
 
-const outputMasterCard: string[] = []
-
-lineReader.on('line', (creditCard: string) => {
-  if (getMasterCardName(creditCard)) {
-    outputMasterCard.push(
-      `${getMasterCardName(creditCard)}: ${creditCard} (${
-        cardValidator(creditCard) ? 'valid' : 'invalid'
-      })`
-    )
-  }
-})
-
-lineReader.on('close', () => {
-  fs.writeFile('./data/MasterCard.txt', outputMasterCard.join('\n'), err => {
-    if (err) throw err
-    console.log('The file has been saved!')
-  })
-})
+outputMasterCard
